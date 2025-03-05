@@ -57,6 +57,18 @@ $ cd /path/to/eventeum/
 ```
 $ mvn clean package
 ```
+### Build in docker
+
+1. Clone project
+```
+git clone https://github.com/kyrychenko-dmytro/eventeum
+```
+
+2. Build project in docker
+
+```
+docker run -it --rm --name my-maven-project -v "$(pwd)"/eventeum:/usr/src/mymaven -w /usr/src/mymaven maven:3.8.1-jdk-8 mvn clean package
+```
 
 ### Run
 
@@ -165,9 +177,9 @@ ethereum:
 ### REST
 Eventeum exposes a REST api that can be used to register events that should be subscribed to / broadcast.
 
--   **URL:** `/api/rest/v1/event-filter`    
+-   **URL:** `/api/rest/v1/event-filter`
 -   **Method:** `POST`
--   **Headers:**  
+-   **Headers:**
 
 | Key | Value |
 | -------- | -------- |
@@ -227,7 +239,7 @@ Dynamically sized arrays are also supported by suffixing the type with `[]`, e.g
 | parameterIndex | Number | yes | | The parameter index to use within the correlation strategy. |
 
 -   **Success Response:**
-    -   **Code:** 200  
+    -   **Code:** 200
         **Content:**
 
 ```json
@@ -262,7 +274,7 @@ eventFilters:
 
 ### REST
 
--   **URL:** `/api/rest/v1/event-filter/{event-id}`    
+-   **URL:** `/api/rest/v1/event-filter/{event-id}`
 -   **Method:** `DELETE`
 -   **Headers:**  `N/A`
 -   **URL Params:** `N/A`
@@ -276,9 +288,9 @@ eventFilters:
 
 ### REST
 
--   **URL:** `/api/rest/v1/event-filter`    
+-   **URL:** `/api/rest/v1/event-filter`
 -   **Method:** `GET`
--   **Headers:**  
+-   **Headers:**
 
 | Key | Value |
 | -------- | -------- |
@@ -331,7 +343,7 @@ From version 0.6.2, eventeum supports monitoring and broadcasting transactions. 
 - TO_ADDRESS: Monitor all transactions that are received for a specific address.
 
 
-Besides on that, it can monitor the transaction for specific statuses: 
+Besides on that, it can monitor the transaction for specific statuses:
 
 - FAILED: It will notify if the transaction has failed
 - CONFIRMED: It will notify if the transaction is confirmed.
@@ -402,7 +414,7 @@ Example filtering by `FROM_ADDRES`, this will notify when a transactions fails w
 -   **Body:** `N/A`
 
 -   **Success Response:**
-    -   **Code:** 200  
+    -   **Code:** 200
         **Content:** `N/A`
 
 ## Broadcast Messages Format
@@ -575,9 +587,9 @@ Eventeum polls an external REST service in order to obtain a list of events broa
 
 The implemented REST service should have a pageable endpoint which accepts a request with the following specification:
 
--   **URL:** Configurable, defaults to `/api/rest/v1/event`    
+-   **URL:** Configurable, defaults to `/api/rest/v1/event`
 -   **Method:** `GET`
--   **Headers:**  
+-   **Headers:**
 
 | Key | Value |
 | -------- | -------- |
@@ -596,7 +608,7 @@ The implemented REST service should have a pageable endpoint which accepts a req
 -   **Body:** `N/A`
 
 -   **Success Response:**
-    -   **Code:** 200  
+    -   **Code:** 200
         **Content:**
 
 ```json

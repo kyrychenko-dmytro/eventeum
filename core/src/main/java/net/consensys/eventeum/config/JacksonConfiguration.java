@@ -19,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.NamedType;
 import net.consensys.eventeum.dto.message.*;
 import net.consensys.eventeum.integration.mixin.PageMixIn;
-import net.consensys.kafkadl.message.RetryableMessage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Page;

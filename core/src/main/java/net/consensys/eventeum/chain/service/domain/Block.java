@@ -32,7 +32,6 @@ public interface Block {
     String getMiner();
     String getMixHash();
     BigInteger getDifficulty();
-    BigInteger getTotalDifficulty();
     String getExtraData();
     BigInteger getSize();
     BigInteger getGasLimit();
