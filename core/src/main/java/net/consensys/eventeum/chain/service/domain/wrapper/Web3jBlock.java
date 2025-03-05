@@ -43,7 +43,6 @@ public class Web3jBlock implements Block {
     private String miner;
     private String mixHash;
     private BigInteger difficulty;
-    private BigInteger totalDifficulty;
     private String extraData;
     private BigInteger size;
     private BigInteger gasLimit;
